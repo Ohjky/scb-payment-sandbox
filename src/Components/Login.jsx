@@ -15,7 +15,7 @@ class Login extends React.Component {
 	handleSubmit = async e => {
 		e.preventDefault()
 		try {
-			const response = await axios.post('http://localhost:4000/api/login', {
+			const response = await axios.post(`${process.env.REACT_APP_API_ENDPOINT}/login`, {
 				username: this.state.username,
 				password: this.state.password
 			})

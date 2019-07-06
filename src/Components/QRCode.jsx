@@ -13,7 +13,7 @@ class QRCode extends React.Component {
 	handleSubmit = async e => {
 		e.preventDefault();
 		try {
-			const response = await axios.post('http://localhost:4000/api/scb/qrcode', { order_amount: this.state.amount }, {
+			const response = await axios.post(`${process.env.REACT_APP_API_ENDPOINT}/scb/qrcode`, { order_amount: this.state.amount }, {
 				headers: {
 					Authorization: `Bearer ${localStorage.getItem('token')}`
 				}
